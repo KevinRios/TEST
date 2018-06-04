@@ -75,10 +75,11 @@ public class Clase06 {
         Auto auto1 = (Auto) lista.get(0); // se castea xq java no sabe bien lo que hay 
         Auto auto2 =  lista2.get(0);
         /*
-        for (Object obj : lista) {
-            if(obj instanceof Auto) {
-                obj.add((Auto)obj);                
+        for(Object obj:lista){
+            if(obj instanceof Auto){
+                lista2.add((Auto)obj);  
             }
+        }
         }*/
         // recorrido lista 2
         System.out.println("------");
