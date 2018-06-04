@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.KevinRios.vehiculo.ventanas.VentanaMaestraController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>         
+          <Menu mnemonicParsing="false" text="Abrir Ventana">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Autos" />
+            </items>
+            <items>
+              <MenuItem mnemonicParsing="false" text="Vendedores" />
+            </items>            
+            <items>
+              <MenuItem mnemonicParsing="false" text="Compradores" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Ayuda Online" />
+            </items>
+            <items>
+              <MenuItem mnemonicParsing="false" text="Configuracion" />
+            </items>
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
