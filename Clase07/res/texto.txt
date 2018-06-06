@@ -1,0 +1,10 @@
+Curso de java. 
+Texto que se agrega con append 
+mas texto 
+lunes
+martes
+miercoles
+Rojo
+Verde
+Azul
+Blanco
