@@ -1,0 +1,5 @@
+https://www.adictosaltrabajo.com/tutoriales/expresiones-lambda-con-java-8/
+
+https://www.adictosaltrabajo.com/tutoriales/optional-java-8/
+
+https://medium.com/@daniel.blazevski/hello-world-example-of-futures-in-java-8-1d3b73caad02
