@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="697.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.KevinRios.java.colegio.ColegioController">
+   <children>
+      <TabPane layoutY="-17.0" prefHeight="45.0" prefWidth="697.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Cursos" />
+          <Tab text="Alumnos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="25.0" layoutY="32.0" prefHeight="15.0" prefWidth="51.0" text="Titulo:" />
+      <TextField fx:id="txtTitulo" layoutX="161.0" layoutY="28.0" prefHeight="23.0" prefWidth="251.0" />
+      <Label layoutX="20.0" layoutY="70.0" prefHeight="15.0" prefWidth="62.0" text="Profesor:" />
+      <Label layoutX="25.0" layoutY="109.0" prefHeight="15.0" prefWidth="36.0" text="Dia:" />
+      <TextField fx:id="txtProfesor" layoutX="161.0" layoutY="66.0" prefHeight="23.0" prefWidth="251.0" />
+      <ComboBox fx:id="cmbDia" layoutX="161.0" layoutY="105.0" prefHeight="23.0" prefWidth="251.0" />
+      <ComboBox fx:id="cmbTurno" layoutX="161.0" layoutY="148.0" prefHeight="23.0" prefWidth="251.0" />
+      <Label layoutX="25.0" layoutY="152.0" prefHeight="15.0" prefWidth="51.0" text="Turno:" />
+      <Button layoutX="309.0" layoutY="200.0" mnemonicParsing="false" onAction="#agregarCurso" prefHeight="25.0" prefWidth="103.0" text="AGREGAR" />
+      <Label fx:id="lblInfoCursos" layoutX="31.0" layoutY="225.0" prefHeight="28.0" prefWidth="231.0" />
+      <TableView fx:id="tblCursos" layoutY="369.0" prefHeight="208.0" prefWidth="697.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="26.0" layoutY="246.0" prefHeight="15.0" prefWidth="51.0" text="Titulo:" />
+      <Label layoutX="26.0" layoutY="274.0" prefHeight="15.0" prefWidth="62.0" text="Profesor:" />
+      <Label layoutX="26.0" layoutY="301.0" prefHeight="15.0" prefWidth="36.0" text="Dia:" />
+      <Label layoutX="26.0" layoutY="328.0" prefHeight="15.0" prefWidth="51.0" text="Turno:" />
+   </children>
+</AnchorPane>
