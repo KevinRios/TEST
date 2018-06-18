@@ -22,4 +22,6 @@ public interface I_CursoR {
     
     List<Curso> getByTurno(String turno);
     
+    List<Curso> getLikeTituloProfesorDiaTurno(String titulo,String profesor,String dia ,String turno);
+    
 }

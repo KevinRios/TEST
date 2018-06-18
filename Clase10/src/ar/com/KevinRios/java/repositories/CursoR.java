@@ -43,29 +43,60 @@ public class CursoR implements I_CursoR {
 
     @Override
     public void remove(Curso curso) {
-
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(curso== null){
+            return;
+        }
+        
+        try {
+            conn.createStatement().execute(
+                    "delete from cursos where id="+curso.getId()
+            );
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     @Override
     public void update(Curso curso) {
+       if(curso==null){
+           return;
+       }
+       
+        try {
+             PreparedStatement ps = conn.prepareStatement(
+                    "update cursos set titulo=?, profesor=?, dia=?, turno=?) where id=?"                    
+            );
 
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            ps.setString(1, curso.getTitulo());
+            ps.setString(2, curso.getProfesor());
+            ps.setString(3, curso.getDia());
+            ps.setString(4, curso.getTurno());
+            ps.setInt(5, curso.getId());
+            ps.execute();
+            
+            ResultSet rs = ps.getGeneratedKeys();
+            if(rs.next()){
+                curso.setId(rs.getInt(1));
+            }
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+       
     }
 
     // Clase para uso interno, por eso no va en la Interface
     private List<Curso> getByFiltro(String filtro) {
         List<Curso> lista = new ArrayList();
         try {
-            ResultSet rs=conn.prepareStatement("select * from cursos where "+ filtro).executeQuery();
-            while(rs.next()){
+            ResultSet rs = conn.prepareStatement("select * from cursos where " + filtro).executeQuery();
+            while (rs.next()) {
                 lista.add(new Curso(
                         rs.getInt("id"),
                         rs.getString("titulo"),
                         rs.getString("profesor"),
                         rs.getString("dia"),
                         rs.getString("turno")
-                 ));
+                ));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,8 +106,8 @@ public class CursoR implements I_CursoR {
 
     @Override
     public Curso getById(int id) {
-        List<Curso> lista= getByFiltro("id="+id);
-        return(lista.isEmpty()) ? null:lista.get(0);
+        List<Curso> lista = getByFiltro("id=" + id);
+        return (lista.isEmpty()) ? null : lista.get(0);
     }
 
     @Override
@@ -114,6 +145,17 @@ public class CursoR implements I_CursoR {
     public List<Curso> getByTurno(String turno) {
 
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Curso> getLikeTituloProfesorDiaTurno(String titulo, String profesor, String dia, String turno) {
+
+        String filtro = 
+                 "titulo like '%"+titulo+"%' and "
+                +"profesor like '%"+profesor+"%' and "
+                +"dia like '%"+dia+"%' and "
+                +"turno like '%"+turno+"%'";
+        return getByFiltro(filtro);
     }
 
 }
