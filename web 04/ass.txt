@@ -1,0 +1,35 @@
+https://www.ecodeup.com/patrones-de-diseno-en-java-mvc-dao-y-dto/
+http://vayajava.blogspot.com/2008/05/diferencias-entre-las-colecciones-list.html
+https://www.adictosaltrabajo.com/tutoriales/introduccion-a-colecciones-en-java/#041
+
+
+
+
+<script>
+            $(document).ready(function() {
+                $('#formPersona').validate();
+            });
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+            $('#tablaPersonas tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                } else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
+            });
+
+            $('#button').click(function () {
+                table.row('.selected').remove().draw(false);
+            });

@@ -1,0 +1,13 @@
+jquery ui
+
+https://datatables.net/
+https://fullcalendar.io/
+https://select2.org/
+http://qtip2.com/
+https://jqueryvalidation.org/
+http://bootboxjs.com/
+https://bootsnipp.com/resources
+
+
+
+
